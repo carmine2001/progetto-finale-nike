@@ -1,0 +1,37 @@
+<div id="wrapper-card">
+    <div class="img">
+        <img [src]="prodotto.immagine" [alt]="prodotto.nome">
+    </div>
+    
+    <div class="descrizione">
+        <div class="nome-prezzo">
+            <p class="fw-bold">{{prodotto.nome}}</p>
+            <p class="fw-bold">€ {{prodotto.prezzo.toLocaleString()}}</p>
+        </div>
+        <p>Scarpa - Uomo</p>
+        <p>{{prodotto.colore_scelto}}</p>
+        <div class="taglia-quantità">
+            <label for="taglia">Taglia/misura</label>
+            <select name="" id="select-taglia">
+                <option value="taglia-scelta">{{prodotto.taglia_selezionata}}</option>
+                <option [value]="'taglia'+taglia" *ngFor="let taglia of prodotto.taglie_disponibili">{{taglia}}</option>
+            </select>
+
+            <label for="taglia">Quantità</label>
+            <select name="" id="select-taglia">
+                <option [value]="'quantità'+n" *ngFor="let n of [1,2,3,4,5,6,7,8,9,10]">{{n}}</option>
+            </select>
+        </div>
+
+        <div class="icone">
+            <img class="regalo" src="../../../assets/img/regalo24px.png" alt="regalo">
+            <img class="cuore" src="../../../assets/img/cuore24px.png" alt="cuore">
+            <img class="cestino" src="../../../assets/img/cestino24px.png" alt="cestino" (click)="deleteProdotto()">
+        </div>
+    </div>
+
+    <div class="ritiro">
+        <p class="fw-bold">Ritiro gratuito</p>
+        <p class="fw-bold"><a>Trova un negozio</a></p>
+    </div>
+</div>

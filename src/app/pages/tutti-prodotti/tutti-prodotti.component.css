@@ -1,0 +1,7 @@
+.contenitore{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+}
+.wrapperFiltri{
+    width: 100%;
+}

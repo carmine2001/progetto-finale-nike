@@ -1,0 +1,114 @@
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Categorie
+            </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <form [formGroup]="accordionForm">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="running" formControlName="Running"
+                            (click)="onSubmit()">
+                        <label class="form-check-label" for="running">
+                            Running
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="basket" formControlName="Basket"
+                            (click)="onSubmit()">
+                        <label class="form-check-label" for="basket">
+                            Basket
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="training"
+                            formControlName="Training" (click)="onSubmit()">
+                        <label class="form-check-label" for="training">
+                            Training
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="sneakers"
+                            formControlName="Sneakers" (click)="onSubmit()">
+                        <label class="form-check-label" for="sneakers">
+                            Sneakers
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="trail-running"
+                            formControlName="Trail Running" (click)="onSubmit()">
+                        <label class="form-check-label" for="trail-running">
+                            Trail Running
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="accordionColor">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Colore
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body wrapper-colore">
+                    <ng-container *ngFor="let c of colori">
+                        <div class="inner-wrapper">
+                            <input class="form-check-input input-colore" type="checkbox" value="" [id]="c.nome"
+                                [formControlName]="c.nome" (click)="onSubmitColor()">
+                            <label class="form-check-label inner-wrapper-colore" [for]="c.nome"
+                                [ngStyle]="{'background-color':c.colore}"></label>
+                            <label class="label-colore-nome" [for]="c.nome">{{c.nome}}</label>
+                        </div>
+                    </ng-container>
+                </div>
+
+            </div>
+        </div>
+    </form>
+    <form [formGroup]="accordionPrice">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Acquista per prezzo
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="minore50" formControlName="inferiore50" (click)="onSubmitPrice()">
+                        <label class="form-check-label" for="minore50">
+                            Inferiore a 50 €
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="50" id="da50a100" formControlName="da50a100" (click)="onSubmitPrice()">
+                        <label class="form-check-label" for="da50a100">
+                            50 € - 100 €
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="da100a150" formControlName="da100a150" (click)="onSubmitPrice()">
+                        <label class="form-check-label" for="da100a150">
+                            100 € - 150 €
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="superiore150" formControlName="superiore150" (click)="onSubmitPrice()">
+                        <label class="form-check-label" for="superiore150">
+                            Superiore a 150 €
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+    <app-button [class]="'btn-secondary lh-1'" [text]="'clear'" (click)="onClear()"></app-button>

@@ -1,0 +1,30 @@
+.wrapper {
+    margin-left: 50px;
+}
+
+.wrapper h3 {
+    margin: 50px 0;
+}
+
+.carosello {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inner-carosello {
+    display: flex;
+    white-space: nowrap;
+}
+
+.carosello img {
+    width: 600px;
+    height: 500px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        margin: 0;
+    }
+}

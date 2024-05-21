@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let prodotto of prodottiBestSeller">
+            <app-card-prodotto class="col-lg-3 col-md-6" [prodotto]="prodotto"></app-card-prodotto>
+        </ng-container>
+    </div>
+</div>

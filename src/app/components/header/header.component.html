@@ -1,0 +1,71 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand"><img class="logo_jordan" src="../../../assets/img/icona_jordan_24px.png" alt=""><img
+                src="../../../assets/img/icona_converse_24px.png" alt=""></a>
+        <ul class="d-flex">
+            <li><a>Trova un negozio</a></li>
+            <li>|</li>
+            <li><a>Aiuto</a></li>
+            <li>|</li>
+            <li><a>Unisciti a noi</a></li>
+            <li>|</li>
+            <li><a>Accedi</a></li>
+        </ul>
+    </div>
+</nav>
+
+<nav class="navbar bg-body-primary">
+    <div class="container-fluid">
+        <a (click)="onNavigate('home')" class="navbar-brand"><img class="logo-la-bair" src="../../../assets/img/icone_Alessio/logo.png" alt=""></a>
+        <ul class="d-flex nav-principale">
+            <li (click)="onNavigate('nuovi-arrivi')"><a>Tutti i nuovi arrivi</a></li>
+            <li (click)="onNavigate('best-seller')"><a>Best Seller</a></li>
+            <li id="scopriLoSport"><a>Scopri lo Sport</a>
+                <ul class="menuTendina">
+                    <li (click)="onNavigate('scopri-lo-sport/Running')"><a>Running</a></li>
+                    <li (click)="onNavigate('scopri-lo-sport/Basket')"><a>Basket</a></li>
+                    <li (click)="onNavigate('scopri-lo-sport/Training')"><a>Training</a></li>
+                    <li (click)="onNavigate('scopri-lo-sport/Sneakers')"><a>Sneakers</a></li>
+                    <li (click)="onNavigate('scopri-lo-sport/Trail Running')"><a>Trail Running</a></li>
+                </ul>
+            </li>
+            <li (click)="onNavigate('tutti-prodotti')"><a>Tutti i prodotti</a></li>
+        </ul>
+        <form class="d-flex" role="search" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <img class="logo-carrello" src="../../../assets/img/icone_Alessio/icona_carrello.png" (click)="onNavigate('carrello')">
+        </form>
+    </div>
+</nav>
+
+<div id="carouselExampleInterval" class="carousel slide bg-body-tertiary" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <div class="acquista d-block w-100">
+                <p>Tutti i nuovi arrivi</p>
+                <small (click)="onNavigate('tutti-prodotti')"><a>Acquista</a></small>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <div class="acquista d-block w-100">
+                <p>Consegna e resi gratuiti</p>
+                <small>Per i Member Nike, consegna e resi gratuiti entro 30 giorni. <a>Scopri di più. </a> <a routerLink="">Unisciti a noi</a></small>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="acquista d-block w-100" data-bs-interval="2000">
+                <p>Iniziano i Member Days</p>
+                <small>Dai un'occhiata ai Member Shop per scoprire il lancio esclusivo di oggi. <a (click)="onNavigate('tutti-prodotti')">Fai acquisti con noi</a></small>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

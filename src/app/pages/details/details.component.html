@@ -1,0 +1,75 @@
+<app-header></app-header>
+<div class="container" *ngIf="prodotto">
+    <div id="wrapper-details">
+        <div class="wrapper1">
+            <div class="img-scarpe-piccole">
+                <div class="img-1-scarpa"><img [src]="prodotto.immagine" [alt]="prodotto.nome"></div>
+                <div *ngFor="let d of [1,2,3,4,5,6,7]"></div>
+            </div>
+            <div class="img-scarpa"><img [src]="prodotto.immagine" [alt]="prodotto.nome"></div>
+        </div>
+        <div class="wrapper2">
+            <h2>{{prodotto.nome}}</h2>
+            <p class="fw-bold">{{prodotto.prezzo | currency: "EUR"}}</p>
+            <div class="text-misure">
+                <p [ngClass]="{'colorSelectedTaglia':!selectedTaglia && isTrue}">Seleziona la taglia/misura</p>
+            </div>
+            <div class="row col-4 div-taglie" [ngClass]="{'selectedTaglia':!selectedTaglia && isTrue}">
+                <input class="radioTaglie" type="radio" [id]="'a'+taglia"
+                    *ngFor="let taglia of prodotto.taglie_disponibili" name="taglia">
+                <label class="labelTaglie fw-bold" *ngFor="let taglia of prodotto.taglie_disponibili" [for]="'a'+taglia"
+                    (click)="onSelectedTaglia(taglia)">
+                    EU {{taglia}}
+                </label>
+                <p class="fw-bold" *ngIf="selectedTaglia">Taglia Selezionata: {{selectedTaglia}}</p>
+            </div>
+
+            <div class="text-misure">
+                <p [ngClass]="{'colorSelectedTaglia':!selectedColore && isTrue}">Seleziona il colore</p>
+            </div>
+            <div class="div-colori" [ngClass]="{'selectedTaglia':!selectedColore && isTrue}">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                Seleziona un colore
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li class="fw-bold" *ngFor="let colore of prodotto.colori_disponibili"
+                                        (click)="onSelectedColore(colore)">{{colore}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="fw-bold" *ngIf="selectedColore">Colore Selezionato: {{selectedColore}}</p>
+                    </div>
+                </div>
+            </div>
+            <button class="addCarrello" (click)="addCarrello()">Aggiungi al carrello</button>
+        </div>
+    </div>
+
+    <div id="wrapper-carrello-absolute" *ngIf="selectedColore && selectedTaglia && isTrueAddCarrello">
+        <div class="headerCarrello">
+            <p class="fw-bold">Aggiunto al carrello</p> <p (click)="chiudiBox()">X</p>
+        </div>
+        <div class="inner-box">
+            <div class="img"><img [src]="prodotto.immagine" [alt]="prodotto.nome"></div>
+            <div class="description-carrello">
+                <p class="fw-bold">{{prodotto.nome}}</p>
+                <p>Scarpe - Ragazzi</p>
+                <p>Taglia/Misura EU </p>
+                <p class="fw-bold">{{prodotto.prezzo | currency: "EUR"}}</p>
+            </div>
+        </div>
+        <div class="wrapper-bottoni">
+            <button (click)="visualizzaCarrello()">Visualizza carrello</button>
+            <button>Pagamento</button>
+        </div>
+    </div>
+    <div class="sfondo-nero" [ngClass]="{'sfondo-nero': selectedColore && selectedTaglia && isTrueAddCarrello}"></div>

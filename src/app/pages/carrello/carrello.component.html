@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="container">
+    <div id="wrapper-principale">
+        <div id="sped-members">
+            <h3>Spedizione gratuita per i Member.</h3>
+            <p>Diventa Member Nike e approfitta della spedizione rapida e gratuita. <a routerLink="#">Unisciti a noi</a> o <a routerLink="#">Accedi</a></p>
+        </div>
+        <div id="prodotti">
+            <h3>Carrello</h3>
+            <h3 *ngIf="arrayCarrello.length === 0">Nel Carrello non sono presenti articoli!!!</h3>
+            <ng-container *ngFor="let prodotto of arrayCarrello">
+                <app-card-carrello [prodotto]="prodotto" (productSelected)="onDelete($event)"></app-card-carrello>
+            </ng-container>
+        </div>
+        <div id="riepilogo">
+            <h3>Riepilogo</h3>
+            <p class="fw-bold">Hai un codice promozionale?</p>
+            <div class="subtotale">
+                <p class="fw-bold">Subtotale</p>
+                <p class="fw-bold">€ {{totale.toLocaleString()}}</p>
+            </div>
+
+            <div class="costi-spedizione">
+                <p class="fw-bold">Costi di spedizione e gestione</p>
+                <p class="fw-bold">Gratis</p>
+            </div>
+
+            <div class="totale">
+                <p class="fw-bold">Totale</p>
+                <p class="fw-bold">€ {{totale.toLocaleString()}}</p>
+            </div>
+
+            <div id="button-riepilogo">
+                <button>Vai al pagamento</button>
+                <button><img src="../../../assets/img/icone_Alessio/icona_paypal.png" alt="paga con paypal"></button>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+

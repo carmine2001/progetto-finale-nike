@@ -1,0 +1,66 @@
+.logo_jordan {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    list-style: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.logo-la-bair {
+    width: 80px;
+}
+
+.nav-principale li {
+    margin-right: 30px;
+}
+
+.navbar .logo-carrello{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.acquista {
+    align-items: flex-start;
+    text-align: center;
+    font-weight: bold;
+}
+
+.acquista small a {
+    color: black;
+}
+
+a {
+    cursor: pointer;
+}
+
+#carouselExampleInterval {
+    margin-bottom: 30px;
+}
+
+#scopriLoSport:hover .menuTendina{
+    display: block;
+}
+
+.menuTendina{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    z-index: 3000;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.menuTendina li {
+    margin-top: 10px;
+}
+

@@ -1,0 +1,15 @@
+<div class="wrapper" *ngIf="prodotti">
+    <h3>Acquista le nostre icone</h3>
+    <div class="carosello">
+        <div class="inner-carosello">
+                <img [src]="prodotti[n].immagine" *ngFor="let n of [0,1,2,3,4,5,6,7]">
+        </div>
+    </div>
+    
+    <h3>Trend della settimana</h3>
+    <div class="carosello">
+        <div class="inner-carosello">
+                <img [src]="prodotti[n].immagine" *ngFor="let n of [8,9,10,11,12,13,14,15]">
+        </div>
+    </div>
+</div>

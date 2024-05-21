@@ -1,0 +1,7 @@
+.card {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.card img {
+    width: 100%;
+}

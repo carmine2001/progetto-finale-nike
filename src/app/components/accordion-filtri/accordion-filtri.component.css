@@ -1,0 +1,39 @@
+.form-check-input{
+    width: 20px;
+    height: 20px;
+}
+.form-check-label{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.wrapper-colore{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 0;
+}
+.inner-wrapper{
+    cursor: pointer;
+}
+.inner-wrapper-colore{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.33);
+    cursor: pointer;
+}
+.input-colore{
+    display: none;
+}
+
+.label-colore-nome{
+    display: block;
+    cursor: pointer;
+}
+
+.form-check-label,.form-check-input{
+    cursor: pointer;
+}
+
+.transparent{
+    background: rgba(0, 0, 0, 0.7); 
+}

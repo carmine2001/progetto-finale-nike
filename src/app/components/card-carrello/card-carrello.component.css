@@ -1,0 +1,58 @@
+#wrapper-card{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-areas: 
+    "img descrizione"
+    "ritiro descrizione";
+    gap: 20px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    padding: 20px 0;
+}
+
+.img{
+    grid-area: img;
+}
+
+.img img{
+    width: 100%;
+}
+
+.descrizione{
+    grid-area: descrizione;
+    height: 150px;
+}
+
+.descrizione p{
+    margin: 0;
+}
+
+.descrizione .nome-prezzo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.descrizione .taglia-quantità{
+    display: flex;
+}
+
+.descrizione .icone{
+    display: flex;
+    margin-top: 20px;
+}
+
+#select-taglia{
+    margin-right: 10px;
+}
+
+.descrizione .icone img{
+    margin-right: 13px;
+    cursor: pointer;
+}
+
+.ritiro{
+    grid-area: ritiro;
+}
+
+.ritiro p{
+    margin: 0;
+}

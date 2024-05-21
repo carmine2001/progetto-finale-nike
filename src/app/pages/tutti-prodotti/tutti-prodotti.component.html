@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="contenitore">
+    <div class="wrapperFiltri">
+        <app-accordion-filtri (formEvent)="onSubmitForm($event)" (accordionColorForm)="onColorAccordion($event)" (accordionPriceEmit)="onSubmitPrice($event)" (clearButtonEmit)="onClearButton()"></app-accordion-filtri>
+    </div>
+    <div class="row m-0">
+        <ng-container *ngFor="let prodotto of prodotti">
+            <app-card-prodotto class="col-lg-3 col-md-6" [prodotto]="prodotto" (emitId)="onGoToDetails($event)"></app-card-prodotto>
+        </ng-container>
+    </div>
+</div>

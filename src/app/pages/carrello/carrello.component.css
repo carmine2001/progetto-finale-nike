@@ -1,0 +1,102 @@
+#wrapper-principale{
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    grid-template-areas: 
+    "members riepilogo"
+    "prodotti riepilogo";
+    gap: 10px 10px;
+}
+
+p{
+    margin: 0;
+}
+
+#sped-members{
+    border: 1px solid rgba(0, 0, 0, 0.243);
+    grid-area: members;
+    padding: 10px;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+#sped-members h3{
+    color: orange;
+}
+
+#sped-members a{
+    color: black;
+}
+
+#prodotti{
+    grid-area: prodotti;
+}
+
+#riepilogo{
+    grid-area: riepilogo;
+}
+
+#riepilogo p {
+    margin-bottom: 10px;
+}
+
+#riepilogo .subtotale,
+#riepilogo .costi-spedizione,
+#riepilogo .totale{
+    display: flex;
+    justify-content: space-between;
+}
+
+.totale {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.285);
+    margin-bottom: 20px;
+}
+
+#riepilogo .costi-spedizione{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.285);
+}
+
+#riepilogo .totale{
+    margin-top: 20px;
+}
+
+#button-riepilogo button{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 30px;
+}
+
+#button-riepilogo button:first-child{
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    border: none;
+}
+
+#button-riepilogo button:first-child:hover{
+    background-color: rgba(0, 0, 0, 0.616);
+}
+
+#button-riepilogo button:last-child{
+    border: 1px solid rgba(0, 0, 0, 0.285);
+    background-color: rgba(0, 0, 0, 0.031);
+}
+
+#button-riepilogo button:last-child:hover{
+    background-color: white;
+}
+
+#button-riepilogo button:last-child img{
+    width: 90px;
+}
+
+@media screen and (max-width:1000px) {
+    #wrapper-principale{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "members"
+        "prodotti"
+        "riepilogo";
+    }
+}

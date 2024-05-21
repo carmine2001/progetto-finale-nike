@@ -1,0 +1,10 @@
+
+    <div class="card mb-4 h-100" (click)="goDetails()">
+        <img [src]="prodotto.immagine" class="card-img-top">
+        <div class="card-body">
+            <p class="card-text text-success fw-bold">{{prodotto.nuovo_arrivi ? "Nuovi Arrivi" : ""}}</p>
+            <p class="card-text fw-bold">{{prodotto.nome}}</p>
+            <p class="card-text">Categoria: {{prodotto.categoria}}</p>
+            <p class="card-text fw-bold">Prezzo: {{prodotto.prezzo | currency: 'EUR'}}</p>
+            </div>
+        </div>
